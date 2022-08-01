@@ -1,0 +1,21 @@
+.sprites.front_default
+.sprites.back_default
+
+shiny version pics
+.sprites.front_shiny
+.sprites.back_shiny
+
+Name: .name
+Height: .height
+Weight: .weight
+Type: .types.forEach(type => {
+	display type DOM element = type.name 
+}
+
+any stats? HP?  attack?  defense?
+
+to get HP:
+
+(pikachu.)stats.forEach(quality =>{
+	if(quality.stat.name === ‘hp’){
+		set hp display value to quality.base_stat
