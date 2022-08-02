@@ -12,6 +12,7 @@ const displayName = document.getElementById('name')
 const displayHeight = document.getElementById('height')
 const displayWeight = document.getElementById('weight')
 const displayType = document.getElementById('type')
+const shinyBtn = document.getElementById('Shiny')
 //const displayImg = document.getElementById('displayImg')
 // function renderPokemon(pokemon){
 //   displayName.textContent = pokemon.name
@@ -80,8 +81,6 @@ function renderPokemonDisplay(id){
             //console.log(pokemon.types.forEach(object => type.name))
         })
 }
-
-
 
 // pokemonArray.forEach(renderPokemon)
 
