@@ -122,7 +122,7 @@ function renderPokemonDisplay(id){
 }
 
 
-const pokeForm = document.getElementById('newPokemon')
+//const pokeForm = document.getElementById('newPokemon')
 const formInput = document.getElementById('formInput')
 
 pokeForm.addEventListener('submit', (e)=> handleNewPokemon(e))

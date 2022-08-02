@@ -14,13 +14,16 @@
 
 #poke-info{
   flex-direction: column;
-  float: right;
+  float: center;
   text-align: center;
   display:flex;
   justify-content: center;
 }
 
-
+#typeCard {
+  height:700px;
+  width: auto;
+}
 
 .card {
     /* float: left; */
