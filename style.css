@@ -11,3 +11,13 @@
     height: 6rem;
     width: auto;
   }
+
+  .card {
+    text-align: center;
+    border: grey solid .5px;
+    padding: .5rem;
+
+    display: inline-grid;
+    margin: 1rem 1rem;
+    box-shadow: 3px 3px #e04b52
+  }

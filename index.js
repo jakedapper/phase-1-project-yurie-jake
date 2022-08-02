@@ -29,7 +29,7 @@ function renderPokemon(id){
               }
             });
             
-            document.getElementById("pok").append(newPokemon);
+            document.getElementById("poke").append(newPokemon);
   });
 }
 
