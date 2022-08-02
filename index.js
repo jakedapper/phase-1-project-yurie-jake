@@ -10,7 +10,6 @@ const fire ="https://pokecardmaker.net/assets/Pokemon/Fire/SS_Basic_Fire.png"
 const grass = "https://pokecardmaker.net/assets/Pokemon/Grass/SS_Basic_Grass.png"
 const water = "https://pokecardmaker.net/assets/Pokemon/Water/SS_Basic_Water.png"
 const electric = "https://pokecardmaker.net/assets/Pokemon/Lightning/SS_Basic_Lightning.png"
-const backgroundCard = document.getElementById("typeCard")
 const imageDisplay = document.getElementById('imgDisplay')
 const displayDiv = document.getElementById("displayPokemon")
 const displayName = document.getElementById('name')
@@ -21,15 +20,8 @@ const shinyBtn = document.getElementById('Shiny')
 const evolveBtn = document.getElementById('Evolve')
 
 const pokeForm = document.getElementById('newPokemon')
-//const pokeForm = document.getElementById('newPokemon')
 
-//const displayImg = document.getElementById('displayImg')
-// function renderPokemon(pokemon){
-//   displayName.textContent = pokemon.name
-//   displayHeight.textContent = pokemon.height
-//   displayWeight.textContent = pokemon.weight 
-//   displayType.textContent = pokemon.types.forEach(object => type.name)
-// }
+
 
 function capitalize(string){
   return string[0].toUpperCase() + string.slice(1)
@@ -57,6 +49,7 @@ function renderPokemon(id){
             image.setAttribute('id', id)
             image.setAttribute('class', 'pokeImg')
             image.addEventListener('click', (e)=>renderPokemonDisplay)
+
             //pokemon image changes when mouseover event occurs
             image.addEventListener("mouseover", (e) => {
                 if(e.target.src == pokemon.sprites.front_default){
@@ -90,27 +83,22 @@ function renderPokemonDisplay(id){
             displayType.textContent = pokeType
            
             if(pokeType === 'grass'){
-              backgroundCard.src = "https://pokecardmaker.net/assets/Pokemon/Grass/SS_Basic_Grass.png";
-            }else if(pokeType === 'electric'){
-              backgroundCard.src = electric;
-            }else if(pokeType === "water"){
-              backgroundCard.src = water;
-            } else {
-              backgroundCard.src  = fire
-            }
-
-            // switch(pokeType){
-            //   case'grass':
-            //     backgroundCard.src = grass
-            //     break
-            //   case 'electric':
-            //     backgroundCard.src = electric
-            //   case 'fire':
-            //     backgroundCard.src = fire
-            //   case 'water':
-            //     backgroundCard.src = water
-            // }
-          
+                displayDiv.style.backgroundImage 
+                = "url('https://pokecardmaker.net/assets/Pokemon/Grass/SS_Basic_Grass.png')";
+                }else if(pokeType === 'electric'){
+                    displayDiv.style.backgroundImage 
+                    = "url('https://pokecardmaker.net/assets/Pokemon/Lightning/SS_Basic_Lightning.png')";
+                 }else if(pokeType === "water"){
+                    displayDiv.style.backgroundImage 
+                    = "url('https://pokecardmaker.net/assets/Pokemon/Water/SS_Basic_Water.png')";
+                 } else if(pokeType === "fire") {
+                    displayDiv.style.backgroundImage 
+                    = "url('https://pokecardmaker.net/assets/Pokemon/Fire/SS_Basic_Fire.png')"
+                 }
+                 else{
+                    displayDiv.style.backgroundImage 
+                    = "url('https://pokecardmaker.net/assets/Pokemon/Colorless/SS_Basic_Colorless.png')"
+                 }
             shinyBtn.addEventListener('click', (e)=>{  
               if(imageDisplay.src == pokemon.sprites.front_default){
                 imageDisplay.src = pokemon.sprites.front_shiny
@@ -118,14 +106,14 @@ function renderPokemonDisplay(id){
                 imageDisplay.src = pokemon.sprites.front_default
               }
             })
+            
           })
 }
 
 
-//const pokeForm = document.getElementById('newPokemon')
 const formInput = document.getElementById('formInput')
 
-pokeForm.addEventListener('submit', (e)=> handleNewPokemon(e))
+pokeForm.addEventListener('submit', handleNewPokemon)
 
 function handleNewPokemon(e){
   e.preventDefault();
@@ -133,8 +121,7 @@ function handleNewPokemon(e){
   let id = formInput.value
   renderPokemon(id)
   renderPokemonDisplay(id)
-  
-  fetch
+
 
 }
 
