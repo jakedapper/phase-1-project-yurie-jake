@@ -18,6 +18,9 @@ const displayHeight = document.getElementById('height')
 const displayWeight = document.getElementById('weight')
 const displayType = document.getElementById('type')
 const shinyBtn = document.getElementById('Shiny')
+const evolveBtn = document.getElementById('Evolve')
+
+const pokeForm = document.getElementById('newPokemon')
 //const pokeForm = document.getElementById('newPokemon')
 
 //const displayImg = document.getElementById('displayImg')
