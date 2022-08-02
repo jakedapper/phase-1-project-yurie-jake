@@ -14,7 +14,7 @@ const displayHeight = document.getElementById('height')
 const displayWeight = document.getElementById('weight')
 const displayType = document.getElementById('type')
 const shinyBtn = document.getElementById('Shiny')
-const pokeForm = document.getElementById('newPokemon')
+//const pokeForm = document.getElementById('newPokemon')
 
 //const displayImg = document.getElementById('displayImg')
 // function renderPokemon(pokemon){
@@ -90,4 +90,24 @@ function renderPokemonDisplay(id){
               }
             })
         })
+}
+
+
+const pokeForm = document.getElementById('newPokemon')
+const formInput = document.getElementById('formInput')
+
+pokeForm.addEventListener('submit', (e)=> handleNewPokemon(e))
+
+function handleNewPokemon(e){
+  e.preventDefault();
+  
+  let id = formInput.value
+  renderPokemon(id)
+  renderPokemonDisplay(id)
+  
+  // console.log(formInput.value)
+  // fetch(`https://pokeapi.co/api/v2/pokemon/${formInput.value}`)
+  // .then(res=>res.json())
+  // .then(pokemon=>)
+
 }
