@@ -48,6 +48,7 @@ function renderPokemon(id){
             image.src = pokemon.sprites.front_default;
             newPokemon.append(name,image);
             image.setAttribute('id', id)
+            image.setAttribute('class', 'pokeImg')
             image.addEventListener('click', (e)=>renderPokemonDisplay)
             //pokemon image changes when mouseover event occurs
             image.addEventListener("mouseover", (e) => {

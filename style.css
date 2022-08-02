@@ -13,13 +13,28 @@
   }
 
 .card {
-    text-align: center;
-    border: grey solid 1px;
-    padding: 1px;
-    display: inline-grid;
-    margin: auto
+    text-align: left;
+    height: 150px;
+    width: auto;
+    border: indigo solid 1px;
+    padding: 3px;
+    grid-template-columns: 1fr;
+    /* display: inline-grid; */
+    margin: 2px;
     /* margin: 1px 1px; */
   }
 
-
+#poke {
+  margin: auto;
+  text-align: right;
+}
   
+#choice {
+  text-align: center;
+  margin: auto;
+}
+
+.pokeImage {
+  text-align:left;
+  color: red
+}
