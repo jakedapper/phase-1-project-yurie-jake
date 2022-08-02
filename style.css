@@ -12,9 +12,18 @@
     width: auto;
   }
 
+#poke-info{
+  flex-direction: column;
+  float: center;
+  text-align: center;
+  display:flex;
+  justify-content: center;
+}
 
-
-
+#typeCard {
+  height:700px;
+  width: auto;
+}
 
 .card {
     /* float: left; */
@@ -31,9 +40,9 @@
     /* margin: 1px 1px; */
   }
 
-#poke {
-  margin: auto;
-  /* text-align: right; */
+#card-list {
+  flex-direction: column;
+  float: left
 }
   
 #choice {

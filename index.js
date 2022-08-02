@@ -71,7 +71,7 @@ function renderPokemon(id){
             image.addEventListener('click', (e) => renderPokemonDisplay(id))
           });
             
-            document.getElementById("poke").append(newPokemon);
+            document.getElementById("card-list").append(newPokemon);
   });
 }
 
@@ -122,7 +122,7 @@ function renderPokemonDisplay(id){
 }
 
 
-const pokeForm = document.getElementById('newPokemon')
+//const pokeForm = document.getElementById('newPokemon')
 const formInput = document.getElementById('formInput')
 
 pokeForm.addEventListener('submit', (e)=> handleNewPokemon(e))
@@ -134,10 +134,7 @@ function handleNewPokemon(e){
   renderPokemon(id)
   renderPokemonDisplay(id)
   
-  // console.log(formInput.value)
-  // fetch(`https://pokeapi.co/api/v2/pokemon/${formInput.value}`)
-  // .then(res=>res.json())
-  // .then(pokemon=>)
+  fetch
 
 }
 
