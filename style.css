@@ -12,13 +12,19 @@
     width: auto;
   }
 
+
+
+
 .card {
-    text-align: left;
-    height: 150px;
-    width: auto;
+    /* float: left; */
+    /* clear: left; */
+    /* position:relative; */
+    display: block;
+    height: 175px;
+    width: 150px;
     border: indigo solid 1px;
     padding: 3px;
-    grid-template-columns: 1fr;
+    /* grid-template-columns: 1fr; */
     /* display: inline-grid; */
     margin: 2px;
     /* margin: 1px 1px; */
@@ -26,7 +32,7 @@
 
 #poke {
   margin: auto;
-  text-align: right;
+  /* text-align: right; */
 }
   
 #choice {
@@ -34,8 +40,16 @@
   margin: auto;
 }
 
-.pokeImage {
+/* .pokeImg {
+  position:absolute; 
   text-align:left;
-  color: red
-}
+  height: 100px;
+  justify-self: center;
+} */
 
+/* #poke-info {
+  margin: auto;
+  text-align: center;
+  position: relative;
+  float:right;
+} */
