@@ -87,7 +87,7 @@ function renderPokemonDisplay(id){
             displayType.textContent = pokeType
            
             if(pokeType === 'grass'){
-              backgroundCard.src = grass;
+              backgroundCard.src = "https://pokecardmaker.net/assets/Pokemon/Grass/SS_Basic_Grass.png";
             }else if(pokeType === 'electric'){
               backgroundCard.src = electric;
             }else if(pokeType === "water"){
