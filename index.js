@@ -6,7 +6,11 @@ pokemonArray.forEach(pokeId => {
   renderPokemon(pokeId)
   //renderPokemonDisplay(pokeId)
 });
-
+const fire ="https://pokecardmaker.net/assets/Pokemon/Fire/SS_Basic_Fire.png"
+const grass = "https://pokecardmaker.net/assets/Pokemon/Grass/SS_Basic_Grass.png"
+const water = "https://pokecardmaker.net/assets/Pokemon/Water/SS_Basic_Water.png"
+const electric = "https://pokecardmaker.net/assets/Pokemon/Lightning/SS_Basic_Lightning.png"
+const backgroundCard = document.getElementById("typeCard")
 const imageDisplay = document.getElementById('imgDisplay')
 const displayDiv = document.getElementById("displayPokemon")
 const displayName = document.getElementById('name')
@@ -60,8 +64,9 @@ function renderPokemon(id){
 
               }
               // image.addEventListener('click', (e) => renderPokemon(pokemon))
-            });
+            
             image.addEventListener('click', (e) => renderPokemonDisplay(id))
+          });
             
             document.getElementById("poke").append(newPokemon);
   });
@@ -73,16 +78,36 @@ function renderPokemonDisplay(id){
         .then(pokemon => {
             displayName.textContent = pokemon.name
             imageDisplay.src = pokemon.sprites.front_default;
-            console.log(displayName)
+            //console.log(displayName)
             displayHeight.textContent = pokemon.height
             displayWeight.textContent = pokemon.weight 
-            console.log('click')
+            //console.log('click')
             let pokeType = pokemon.types[0].type.name
             console.log(pokeType)
             displayType.textContent = pokeType
-            // let pokeImage = document.querySelector(id)
-            //displayType.textContent = pokemon.types.forEach(object => type.name)
-            //console.log(pokemon.types.forEach(object => type.name))
+           
+            if(pokeType === 'grass'){
+              backgroundCard.src = grass;
+            }else if(pokeType === 'electric'){
+              backgroundCard.src = electric;
+            }else if(pokeType === "water"){
+              backgroundCard.src = water;
+            } else {
+              backgroundCard.src  = fire
+            }
+
+            // switch(pokeType){
+            //   case'grass':
+            //     backgroundCard.src = grass
+            //     break
+            //   case 'electric':
+            //     backgroundCard.src = electric
+            //   case 'fire':
+            //     backgroundCard.src = fire
+            //   case 'water':
+            //     backgroundCard.src = water
+            // }
+          
             shinyBtn.addEventListener('click', (e)=>{  
               if(imageDisplay.src == pokemon.sprites.front_default){
                 imageDisplay.src = pokemon.sprites.front_shiny
@@ -90,7 +115,7 @@ function renderPokemonDisplay(id){
                 imageDisplay.src = pokemon.sprites.front_default
               }
             })
-        })
+          })
 }
 
 
@@ -112,3 +137,4 @@ function handleNewPokemon(e){
   // .then(pokemon=>)
 
 }
+
