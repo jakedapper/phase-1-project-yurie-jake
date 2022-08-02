@@ -17,6 +17,7 @@ const shinyBtn = document.getElementById('Shiny')
 const evolveBtn = document.getElementById('Evolve')
 
 const pokeForm = document.getElementById('newPokemon')
+//const pokeForm = document.getElementById('newPokemon')
 
 //const displayImg = document.getElementById('displayImg')
 // function renderPokemon(pokemon){
@@ -50,6 +51,7 @@ function renderPokemon(id){
             image.src = pokemon.sprites.front_default;
             newPokemon.append(name,image);
             image.setAttribute('id', id)
+            image.setAttribute('class', 'pokeImg')
             image.addEventListener('click', (e)=>renderPokemonDisplay)
             //pokemon image changes when mouseover event occurs
             image.addEventListener("mouseover", (e) => {
@@ -92,4 +94,24 @@ function renderPokemonDisplay(id){
               }
             })
         })
+}
+
+
+const pokeForm = document.getElementById('newPokemon')
+const formInput = document.getElementById('formInput')
+
+pokeForm.addEventListener('submit', (e)=> handleNewPokemon(e))
+
+function handleNewPokemon(e){
+  e.preventDefault();
+  
+  let id = formInput.value
+  renderPokemon(id)
+  renderPokemonDisplay(id)
+  
+  // console.log(formInput.value)
+  // fetch(`https://pokeapi.co/api/v2/pokemon/${formInput.value}`)
+  // .then(res=>res.json())
+  // .then(pokemon=>)
+
 }

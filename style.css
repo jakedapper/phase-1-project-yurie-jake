@@ -8,21 +8,29 @@
   }
   
   #pokemon-header img {
-    height: 6rem;
+    height: 8rem;
     width: auto;
   }
 
-  .card {
-    text-align: left;
-    border: grey solid .5px;
-    padding: .5rem;
 
-    display: inline-grid;
-    margin: 1rem 1rem;
-    box-shadow: 3px 3px #e04b52
-  }
+ 
 
-  *, *:before, *:after {
+#poke {
+  margin: auto;
+  text-align: right;
+}
+  
+#choice {
+  text-align: center;
+  margin: auto;
+}
+
+.pokeImage {
+  text-align:left;
+  color: red
+}
+
+*, *:before, *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -97,3 +105,15 @@
     80% { top: -20px }
     100% { top: 0 }
   }
+.card {
+    text-align: left;
+    height: 150px;
+    width: auto;
+    border: indigo solid 1px;
+    padding: 3px;
+    grid-template-columns: 1fr;
+    /* display: inline-grid; */
+    margin: 2px;
+    /* margin: 1px 1px; */
+  }
+
