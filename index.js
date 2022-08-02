@@ -6,6 +6,7 @@ pokemonArray.forEach(pokeId => {
   renderPokemon(pokeId)
   //renderPokemonDisplay(pokeId)
 });
+
 const imageDisplay = document.getElementById('imgDisplay')
 const displayDiv = document.getElementById("displayPokemon")
 const displayName = document.getElementById('name')
@@ -13,6 +14,8 @@ const displayHeight = document.getElementById('height')
 const displayWeight = document.getElementById('weight')
 const displayType = document.getElementById('type')
 const shinyBtn = document.getElementById('Shiny')
+const pokeForm = document.getElementById('newPokemon')
+
 //const displayImg = document.getElementById('displayImg')
 // function renderPokemon(pokemon){
 //   displayName.textContent = pokemon.name
@@ -79,6 +82,13 @@ function renderPokemonDisplay(id){
             // let pokeImage = document.querySelector(id)
             //displayType.textContent = pokemon.types.forEach(object => type.name)
             //console.log(pokemon.types.forEach(object => type.name))
+            shinyBtn.addEventListener('click', (e)=>{  
+              if(imageDisplay.src == pokemon.sprites.front_default){
+                imageDisplay.src = pokemon.sprites.front_shiny
+              }else if(imageDisplay.src ==pokemon.sprites.front_shiny){
+                imageDisplay.src = pokemon.sprites.front_default
+              }
+            })
         })
 }
 
