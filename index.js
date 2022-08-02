@@ -91,26 +91,3 @@ function renderPokemonDisplay(id){
             })
         })
 }
-
-// pokemonArray.forEach(renderPokemon)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//.addEventListener('click', (e)=>renderPokemon)
-
-//const evolvedArray = [2,3,5,6,8,9]
-
-//fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
