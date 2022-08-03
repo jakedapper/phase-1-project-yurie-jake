@@ -35,7 +35,7 @@ function renderPokemon(id){
         .then(res => res.json())
         .then(pokemon => {;
            // console.log(pokemon.sprites.front_default);
-           console.log(pokemon.name)
+           //console.log(pokemon.name)
             let newPokemon = document.createElement("div");
             let deleteBtn = document.createElement("button")
             deleteBtn.textContent = "DELETE"
@@ -61,10 +61,11 @@ function renderPokemon(id){
                     e.target.src = pokemon.sprites.front_default;
               
               }
-              deleteBtn.addEventListener('click', (e)=>{
-                newPokemon.remove()
-              })
             });
+            deleteBtn.addEventListener('click', (e)=>{
+              newPokemon.remove()
+              console.log(e.target)
+            })
             
             image.addEventListener('click', () => renderPokemonDisplay(id))
             document.getElementById("card-list").append(newPokemon);
@@ -75,7 +76,7 @@ function renderPokemonDisplay(id){
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         .then(res => res.json())
         .then(pokemon => {
-            console.log(pokemon.name)
+            //(pokemon.name)
             displayName.textContent = capitalize(pokemon.name)
             imageDisplay.src = pokemon.sprites.front_default;
             //console.log(displayName)
@@ -83,7 +84,7 @@ function renderPokemonDisplay(id){
             displayWeight.textContent = (pokemon.weight/10) + " kgs"
             //console.log('click')
             let pokeType = pokemon.types[0].type.name
-            console.log(pokeType)
+            //console.log(pokeType)
 
             displayType.textContent = capitalize(pokeType)
             currentPokemonId = id;
@@ -124,7 +125,7 @@ evolveBtn.addEventListener("click", ()=>evolve(currentPokemonId));
 
 function evolve(id){
     //console.log(e.target);
-    console.log(id);
+    //(id);
     
     if(id ==1 || id == 2 || id ==4 || id ==5 || id == 7 || id ==8 || id ==25){
         currentPokemonId = id + 1;
@@ -133,7 +134,7 @@ function evolve(id){
         renderPokemon(currentPokemonId);
         renderPokemonDisplay(currentPokemonId);
         
-        console.log(currentPokemonId);
+        //console.log(currentPokemonId);
 
     }
     
