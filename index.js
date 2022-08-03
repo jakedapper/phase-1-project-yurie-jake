@@ -32,6 +32,7 @@ function renderPokemon(id){
         .then(res => res.json())
         .then(pokemon => {;
            // console.log(pokemon.sprites.front_default);
+           console.log(pokemon.name)
             let newPokemon = document.createElement("div");
             let deleteBtn = document.createElement("button")
             deleteBtn.textContent = "DELETE"
@@ -71,6 +72,7 @@ function renderPokemonDisplay(id){
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         .then(res => res.json())
         .then(pokemon => {
+            console.log(pokemon.name)
             displayName.textContent = capitalize(pokemon.name)
             imageDisplay.src = pokemon.sprites.front_default;
             //console.log(displayName)
@@ -107,33 +109,28 @@ function renderPokemonDisplay(id){
             })
 
             //hardcoded the evolution button with if statements
-            evolveBtn.addEventListener("click", (e)=>evolve(e, currentPokemonId));
         })
 }
+evolveBtn.addEventListener("click", ()=>evolve(currentPokemonId));
 
 
-function evolve(e, id){
-    console.log(e.target);
+function evolve(id){
+    //console.log(e.target);
+    console.log(id);
+    currentPokemonId = id + 1;
+    
+    if(id ==1 || id == 2 || id ==4 || id ==5 || id == 7 || id ==8 || id ==25){
+   
+        renderPokemon(currentPokemonId);
+        renderPokemonDisplay(currentPokemonId);
+        
+        console.log(currentPokemonId);
 
-    if(id <3){
-        renderPokemon(id+1);
-        renderPokemonDisplay(id+1);
     }
-    else if(id>3 && id < 6){
-        renderPokemon(id+1);
-        renderPokemonDisplay(id+1);
-
+    
+    else{
+        console.log("evolution unavailable");
     }
-    else if(id<9){
-        renderPokemon(id+1);
-        renderPokemonDisplay(id+1);
-
-                    }
-    else if(id==25){
-        renderPokemon(id+1);
-        renderPokemonDisplay(id+1);
-
-                    }
 }
 
 const formInput = document.getElementById('formInput')
