@@ -3,13 +3,13 @@
     justify-content: center;
     background: #515DA2;
     opacity: .8;
-    height: 7rem;
-    padding: 1rem;
+    height: 8rem;
   }
   
 #pokemon-header img {
-  height: 8rem;
-  width: auto;
+    height: 8rem;
+    width: auto;
+  
   }
 
 #display-pokemon {
@@ -24,10 +24,16 @@
   justify-content: center;
 }
 
-#typeCard {
-  height:700px;
-  width: auto;
+#displayPokemon {
+  height:1000px;
+  width: 1000px;
+  position: center;
+  background-position: center;
+  background-size: 600px;
+  background-repeat: no-repeat;
+
 }
+
 
 .delete {
   position:absolute;
@@ -87,7 +93,7 @@
   .top-of-page {
     position: absolute;
     top: 15%;
-    left: 75%;
+    left: 85%;
     transform: translate(-50%,-50%);
   }
   /* Poké Styles */
@@ -138,7 +144,7 @@
     to { background: #e74c3c; }
   }
   @keyframes shake {
-    0 { transform: translate(0, 0) rotate(0); }
+    0% { transform: translate(0, 0) rotate(0); }
     20% { transform: translate(-10px, 0) rotate(-20deg); }
     30% { transform: translate(10px, 0) rotate(20deg); }
     50% { transform: translate(-10px, 0) rotate(-10deg); }
