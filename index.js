@@ -22,8 +22,6 @@ const evolveBtn = document.getElementById('Evolve')
 
 const pokeForm = document.getElementById('newPokemon')
 
-
-
 function capitalize(string){
   return string[0].toUpperCase() + string.slice(1)
 }
@@ -37,6 +35,7 @@ function renderPokemon(id){
             let newPokemon = document.createElement("div");
             let deleteBtn = document.createElement("button")
             deleteBtn.textContent = "DELETE"
+            deleteBtn.setAttribute('class', "delete")
             newPokemon.className = "card";
             newPokemon.append(deleteBtn)
             deleteBtn.addEventListener('click', (e)=>{
@@ -72,7 +71,7 @@ function renderPokemonDisplay(id){
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         .then(res => res.json())
         .then(pokemon => {
-            displayName.textContent = pokemon.name
+            displayName.textContent = capitalize(pokemon.name)
             imageDisplay.src = pokemon.sprites.front_default;
             //console.log(displayName)
             displayHeight.textContent = pokemon.height
