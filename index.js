@@ -41,9 +41,6 @@ function renderPokemon(id){
             deleteBtn.setAttribute('class', "delete")
             newPokemon.className = "card";
             newPokemon.append(deleteBtn)
-            deleteBtn.addEventListener('click', (e)=>{
-              newPokemon.remove()
-            })
             let name = document.createElement("h2");
             name.setAttribute('class', 'card-name')
             name.textContent = capitalize(pokemon.name);
@@ -61,15 +58,17 @@ function renderPokemon(id){
                 }
                 else if(e.target.src == pokemon.sprites.back_default){
                     e.target.src = pokemon.sprites.front_default;
-
+              
               }
+              deleteBtn.addEventListener('click', (e)=>{
+                newPokemon.remove()
+              })
+            });
             
             image.addEventListener('click', () => renderPokemonDisplay(id))
-          });
-            
             document.getElementById("card-list").append(newPokemon);
-  });
-}
+          });
+        }
 
 function renderPokemonDisplay(id){
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -104,19 +103,19 @@ function renderPokemonDisplay(id){
                     displayDiv.style.backgroundImage 
                     = "url('https://pokecardmaker.net/assets/Pokemon/Colorless/SS_Basic_Colorless.png')"
                  }
-            shinyBtn.addEventListener('click', (e)=>{  
-              if(imageDisplay.src == pokemon.sprites.front_default){
-                imageDisplay.src = pokemon.sprites.front_shiny
-              }else if(imageDisplay.src ==pokemon.sprites.front_shiny){
-                imageDisplay.src = pokemon.sprites.front_default
+                 console.log('click')
+                 //hardcoded the evolution button with if statements
+                 shinyBtn.addEventListener('click', (e)=>{  
+                   if(imageDisplay.src == pokemon.sprites.front_default){
+                     imageDisplay.src = pokemon.sprites.front_shiny
+                   }else if(imageDisplay.src ==pokemon.sprites.front_shiny){
+                     imageDisplay.src = pokemon.sprites.front_default
+                   }
+                 })
+                })
               }
-            })
-
-            //hardcoded the evolution button with if statements
-            evolveBtn.addEventListener("click", (e)=>evolve(e, currentPokemonId));
-        })
-}
-
+              
+evolveBtn.addEventListener("click", (e)=>evolve(e, currentPokemonId));
 
 function evolve(e, id){
     console.log(e.target);
