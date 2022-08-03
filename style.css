@@ -12,9 +12,14 @@
   width: auto;
   }
 
-#display-pokemon {
-  float: center
-}
+  #choice {
+    text-align: center;
+    margin: auto;
+  }
+ 
+
+
+
 
 #poke-info{
   flex-direction: column;
@@ -24,13 +29,13 @@
   justify-content: center;
 }
 
+#display-pokemon {
+  float: center
+}
+
 #typeCard {
   height:700px;
   width: auto;
-}
-
-.delete {
-  position:absolute;
 }
 
 .card img{
@@ -40,6 +45,11 @@
   justify-content: center;
   width: 150px;
   position: absolute;
+}
+
+#card-list {
+  flex-direction: column;
+  float: left
 }
 
 .card {
@@ -59,23 +69,18 @@
     /* margin: 1px 1px; */
   }
 
-#card-list {
-  flex-direction: column;
-  float: left
-}
-  
-#choice {
-  text-align: center;
-  margin: auto;
+.delete {
+  position:absolute;
 }
 
-/* .pokeImg {
-  position:absolute; 
-  text-align:left;
-  height: 100px;
-  justify-self: center;
-} */
+.pokeImg {
+ 
+}
 
+
+
+
+//animation
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
