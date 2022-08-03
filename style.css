@@ -12,9 +12,11 @@
   
   }
 
-#display-pokemon {
-  float: center
-}
+  #choice {
+    text-align: center;
+    margin: auto;
+  }
+
 
 #poke-info{
   flex-direction: column;
@@ -22,6 +24,11 @@
   text-align: center;
   display:flex;
   justify-content: center;
+}
+
+#typeCard {
+  height:700px;
+  width: auto;
 }
 
 #displayPokemon {
@@ -33,7 +40,6 @@
   background-repeat: no-repeat;
 
 }
-
 
 .delete {
   position:absolute;
@@ -48,9 +54,15 @@
   position: absolute;
 }
 
+#card-list {
+  flex-direction: column;
+  float: left
+}
+
 .card {
     display: flex;
     flex-direction: column;
+    text-align: center;
     /* align-items: center; */
     /* vertical-align: middle; */
     /* justify-content: center; */
@@ -65,23 +77,27 @@
     /* margin: 1px 1px; */
   }
 
-#card-list {
-  flex-direction: column;
-  float: left
-}
-  
-#choice {
-  text-align: center;
+.delete {
+  display:flex;
+  float: center;
   margin: auto;
+  align-items: center;
+  /* align-items:center */
+  justify-content: center;
+  position:absolute;
+  justify-content: center;
+  bottom: 5px;
+  left: 25%;
 }
 
-/* .pokeImg {
-  position:absolute; 
-  text-align:left;
-  height: 100px;
-  justify-self: center;
-} */
+.pokeImg {
+ 
+}
 
+
+
+
+//animation
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
