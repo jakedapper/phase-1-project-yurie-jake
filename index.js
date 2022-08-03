@@ -1,5 +1,6 @@
 let pokemonArray = [1,4,7,25];
 let evolvedArray = [2,3,5,6,8,9];
+let currentPokemonId = 0;
 
 //render the started pokemon onto the page
 pokemonArray.forEach(pokeId => {
@@ -48,7 +49,7 @@ function renderPokemon(id){
             newPokemon.append(name,image);
             image.setAttribute('id', id)
             image.setAttribute('class', 'pokeImg')
-            image.addEventListener('click', (e)=>renderPokemonDisplay)
+           // image.addEventListener('click', (e)=>renderPokemonDisplay)
 
             //pokemon image changes when mouseover event occurs
             image.addEventListener("mouseover", (e) => {
@@ -59,9 +60,8 @@ function renderPokemon(id){
                     e.target.src = pokemon.sprites.front_default;
 
               }
-              // image.addEventListener('click', (e) => renderPokemon(pokemon))
             
-            image.addEventListener('click', (e) => renderPokemonDisplay(id))
+            image.addEventListener('click', () => renderPokemonDisplay(id))
           });
             
             document.getElementById("card-list").append(newPokemon);
@@ -81,7 +81,7 @@ function renderPokemonDisplay(id){
             let pokeType = pokemon.types[0].type.name
             console.log(pokeType)
             displayType.textContent = pokeType
-           
+            currentPokemonId = id;
             if(pokeType === 'grass'){
                 displayDiv.style.backgroundImage 
                 = "url('https://pokecardmaker.net/assets/Pokemon/Grass/SS_Basic_Grass.png')";
@@ -106,10 +106,36 @@ function renderPokemonDisplay(id){
                 imageDisplay.src = pokemon.sprites.front_default
               }
             })
-            
-          })
+
+            //hardcoded the evolution button with if statements
+            evolveBtn.addEventListener("click", (e)=>evolve(e, currentPokemonId));
+        })
 }
 
+
+function evolve(e, id){
+    console.log(e.target);
+
+    if(id <3){
+        renderPokemon(id+1);
+        renderPokemonDisplay(id+1);
+    }
+    else if(id>3 && id < 6){
+        renderPokemon(id+1);
+        renderPokemonDisplay(id+1);
+
+    }
+    else if(id<9){
+        renderPokemon(id+1);
+        renderPokemonDisplay(id+1);
+
+                    }
+    else if(id==25){
+        renderPokemon(id+1);
+        renderPokemonDisplay(id+1);
+
+                    }
+}
 
 const formInput = document.getElementById('formInput')
 
