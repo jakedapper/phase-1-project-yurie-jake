@@ -4,6 +4,7 @@
     background: #515DA2;
     opacity: .8;
     height: 8rem;
+
   }
   
 #pokemon-header img {
@@ -15,6 +16,9 @@
   #choice {
     text-align: center;
     margin: auto;
+    font-family: "Lucida Console", "Courier New", monospace;
+
+
   }
 
 
@@ -58,7 +62,21 @@
     z-index: 2;
 
 }
+#newPokemon{
+    position: relative;
+    margin-top: -50px;
+    margin-left: 150px;
+    bottom: 0%;
+    left: 10px;
+    background: lightblue;
+    width: 700px;
+    font-family: "Lucida Console", "Courier New", monospace;
+    border: 2px solid #b4152d;
+    border-radius: 4px;
 
+
+
+}
 
 #imgDisplay{
     position: relative;
