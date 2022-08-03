@@ -7,6 +7,8 @@ pokemonArray.forEach(pokeId => {
   renderPokemon(pokeId)
   //renderPokemonDisplay(pokeId)
 });
+
+//DOM Variables and Type PokeCard refs
 const fire ="https://pokecardmaker.net/assets/Pokemon/Fire/SS_Basic_Fire.png"
 const grass = "https://pokecardmaker.net/assets/Pokemon/Grass/SS_Basic_Grass.png"
 const water = "https://pokecardmaker.net/assets/Pokemon/Water/SS_Basic_Water.png"
@@ -19,9 +21,10 @@ const displayWeight = document.getElementById('weight')
 const displayType = document.getElementById('type')
 const shinyBtn = document.getElementById('Shiny')
 const evolveBtn = document.getElementById('Evolve')
-
 const pokeForm = document.getElementById('newPokemon')
 
+
+//utility helper functions
 function capitalize(string){
   return string[0].toUpperCase() + string.slice(1)
 }
@@ -42,6 +45,7 @@ function renderPokemon(id){
               newPokemon.remove()
             })
             let name = document.createElement("h2");
+            name.setAttribute('class', 'card-name')
             name.textContent = capitalize(pokemon.name);
             let image = document.createElement("img");
             image.src = pokemon.sprites.front_default;
@@ -74,13 +78,15 @@ function renderPokemonDisplay(id){
             displayName.textContent = capitalize(pokemon.name)
             imageDisplay.src = pokemon.sprites.front_default;
             //console.log(displayName)
-            displayHeight.textContent = pokemon.height
-            displayWeight.textContent = pokemon.weight 
+            displayHeight.textContent = (pokemon.height/10) + " m"
+            displayWeight.textContent = (pokemon.weight/10) + " kgs"
             //console.log('click')
             let pokeType = pokemon.types[0].type.name
             console.log(pokeType)
-            displayType.textContent = pokeType
+
+            displayType.textContent = capitalize(pokeType)
             currentPokemonId = id;
+
             if(pokeType === 'grass'){
                 displayDiv.style.backgroundImage 
                 = "url('https://pokecardmaker.net/assets/Pokemon/Grass/SS_Basic_Grass.png')";
