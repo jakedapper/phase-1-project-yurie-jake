@@ -7,10 +7,14 @@
     padding: 1rem;
   }
   
-  #pokemon-header img {
-    height: 8rem;
-    width: auto;
+#pokemon-header img {
+  height: 8rem;
+  width: auto;
   }
+
+#display-pokemon {
+  float: center
+}
 
 #poke-info{
   flex-direction: column;
@@ -25,11 +29,26 @@
   width: auto;
 }
 
+.delete {
+  position:absolute;
+}
+
+.card img{
+  display: flex;
+  align-items: center;
+  /* align-items:center */
+  justify-content: center;
+  width: 150px;
+  position: absolute;
+}
+
 .card {
-    /* float: left; */
-    /* clear: left; */
-    /* position:relative; */
-    display: block;
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* vertical-align: middle; */
+    /* justify-content: center; */
+    position: relative;
     height: 175px;
     width: 150px;
     border: indigo solid 1px;
