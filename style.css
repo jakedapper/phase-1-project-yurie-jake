@@ -75,7 +75,7 @@
   /* vertical-align: middle; */
   /* justify-content: center; */
   position: relative;
-  height: 175px;
+  height: 200px;
   width: 150px;
   border: indigo solid 1px;
   padding: 3px;
@@ -94,7 +94,7 @@
   object-fit: cover;
   width: 150px;
   /* width: 70% */
-  bottom: 10px;
+  bottom: 30px;
   position: absolute;
 }
 
