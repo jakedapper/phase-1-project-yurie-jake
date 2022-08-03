@@ -72,7 +72,7 @@ function renderPokemonDisplay(id){
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
         .then(res => res.json())
         .then(pokemon => {
-            displayName.textContent = pokemon.name
+            displayName.textContent = capitalize(pokemon.name)
             imageDisplay.src = pokemon.sprites.front_default;
             //console.log(displayName)
             displayHeight.textContent = pokemon.height
