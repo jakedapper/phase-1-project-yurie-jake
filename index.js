@@ -48,7 +48,7 @@ function renderPokemon(id){
             let image = document.createElement("img");
             image.src = pokemon.sprites.front_default;
             newPokemon.append(name,image);
-            image.setAttribute('id', id)
+            newPokemon.setAttribute('id', id)
             image.setAttribute('class', 'pokeImg')
            // image.addEventListener('click', (e)=>renderPokemonDisplay)
 
@@ -115,15 +115,17 @@ function renderPokemonDisplay(id){
                  })
                 })
               }
-           
+
+renderPokemonDisplay(1);              
 evolveBtn.addEventListener("click", ()=>evolve(currentPokemonId));
 
 function evolve(id){
     //console.log(e.target);
     console.log(id);
-    currentPokemonId = id + 1;
     
     if(id ==1 || id == 2 || id ==4 || id ==5 || id == 7 || id ==8 || id ==25){
+        currentPokemonId = id + 1;
+        document.getElementById(id).remove();
    
         renderPokemon(currentPokemonId);
         renderPokemonDisplay(currentPokemonId);
