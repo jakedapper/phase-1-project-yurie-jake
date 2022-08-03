@@ -100,6 +100,9 @@ function renderPokemonDisplay(id){
                  } else if(pokeType === "fire") {
                     displayDiv.style.backgroundImage 
                     = "url('https://pokecardmaker.net/assets/Pokemon/Fire/SS_Basic_Fire.png')"
+                 }else if(pokeType === "psychic") {
+                    displayDiv.style.backgroundImage 
+                    = "url('https://pokecardmaker.net/assets/Pokemon/Psychic/SS_Basic_Psychic.png')"
                  }
                  else{
                     displayDiv.style.backgroundImage 
