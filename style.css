@@ -62,6 +62,11 @@
     z-index: 2;
 
 }
+#submit, #formInput, #formName{
+    position: relative;
+    bottom: 5px;
+
+}
 #newPokemon{
     position: relative;
     margin-top: -50px;
@@ -73,8 +78,7 @@
     font-family: "Lucida Console", "Courier New", monospace;
     border: 2px solid #b4152d;
     border-radius: 4px;
-
-
+    align-content: center;
 
 }
 
