@@ -22,6 +22,10 @@ const shinyBtn = document.getElementById('Shiny')
 const evolveBtn = document.getElementById('Evolve')
 const pokeForm = document.getElementById('newPokemon')
 
+function capitalize(string){
+  return string[0].toUpperCase() + string.slice(1)
+}
+
 //gets pokemon images using ID and renders them
 function renderPokemon(id){
   fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
@@ -36,7 +40,7 @@ function renderPokemon(id){
     newPokemon.className = "card";
     let name = document.createElement("h2");
     name.setAttribute('class', 'card-name')
-    name.textContent = capitalize(pokemon.name);
+    name.textContent = pokemon.name;
     let image = document.createElement("img");
     image.src = pokemon.sprites.front_default;
     newPokemon.append(name, image, deleteBtn);
@@ -68,7 +72,7 @@ function renderPokemonDisplay(id){
     .then(res => res.json())
     .then(pokemon => {
     //(pokemon.name)
-      displayName.textContent = capitalize(pokemon.name)
+      displayName.textContent = pokemon.name
       imageDisplay.src = pokemon.sprites.front_default;
       //console.log(displayName)
       displayHeight.textContent = (pokemon.height/10) + " m"
@@ -77,7 +81,7 @@ function renderPokemonDisplay(id){
       let pokeType = pokemon.types[0].type.name
       //console.log(pokeType)
 
-      displayType.textContent = capitalize(pokeType)
+      displayType.textContent = pokeType
       currentPokemonId = id;
 
       if(pokeType === 'grass'){
@@ -112,12 +116,13 @@ function evolve(id){
   if(id ==1 || id == 2 || id ==4 || id ==5 || id == 7 || id ==8 || id ==25){
     currentPokemonId = id + 1;
     document.getElementById(id).remove();
+   
     renderPokemon(currentPokemonId);
     renderPokemonDisplay(currentPokemonId);
-  }
-  else{
-    console.log("evolution unavailable");
-  }
+    }
+    else{
+        console.log("evolution unavailable");
+    }
 }
 
 const formInput = document.getElementById('formInput')
