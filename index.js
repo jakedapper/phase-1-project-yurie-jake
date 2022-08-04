@@ -2,6 +2,16 @@ let pokemonArray = [1,4,7,25];
 let evolvedArray = [2,3,5,6,8,9];
 let currentPokemonId = 0;
 
+let pokeball = ""
+
+fetch("https://pokeapi.co/api/v2/item/4/")
+.then(res=>res.json())
+.then(item => {
+   pokeball += item.sprites.default
+   console.log(pokeball)
+})
+
+
 //render the started pokemon onto the page
 pokemonArray.forEach(pokeId => {
   renderPokemon(pokeId)
@@ -41,13 +51,12 @@ function renderPokemon(id){
             deleteBtn.textContent = "DELETE"
             deleteBtn.setAttribute('class', "delete")
             newPokemon.className = "card";
-            newPokemon.append(deleteBtn)
             let name = document.createElement("h2");
             name.setAttribute('class', 'card-name')
             name.textContent = capitalize(pokemon.name);
             let image = document.createElement("img");
             image.src = pokemon.sprites.front_default;
-            newPokemon.append(name,image);
+            newPokemon.append(name, image, deleteBtn);
             newPokemon.setAttribute('id', id)
             image.setAttribute('class', 'pokeImg')
            // image.addEventListener('click', (e)=>renderPokemonDisplay)
@@ -133,11 +142,7 @@ function evolve(id){
    
         renderPokemon(currentPokemonId);
         renderPokemonDisplay(currentPokemonId);
-        
-        //console.log(currentPokemonId);
-
     }
-    
     else{
         console.log("evolution unavailable");
     }
@@ -149,11 +154,7 @@ pokeForm.addEventListener('submit', handleNewPokemon)
 
 function handleNewPokemon(e){
   e.preventDefault();
-  
   let id = formInput.value
   renderPokemon(id)
   renderPokemonDisplay(id)
-
-
 }
-
