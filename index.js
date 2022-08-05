@@ -98,20 +98,29 @@ function renderPokemonDisplay(id){
         displayDiv.style.backgroundImage = "url('https://pokecardmaker.net/assets/Pokemon/Colorless/SS_Basic_Colorless.png')"
       }
                  
-      shinyBtn.addEventListener('click', (e)=>{  
-        if(imageDisplay.src == pokemon.sprites.front_default){
-          imageDisplay.src = pokemon.sprites.front_shiny
-        }else if(imageDisplay.src ==pokemon.sprites.front_shiny){
-          imageDisplay.src = pokemon.sprites.front_default
-        }
-      })
+      
     })
 }
+
 //display pokemon on page load
-renderPokemonDisplay(1);              
+renderPokemonDisplay(1);          
+
+//Shiny button function
+shinyBtn.addEventListener('click', (e)=>{  
+    fetch(`https://pokeapi.co/api/v2/pokemon/${currentPokemonId}`)
+    .then(res => res.json())
+    .then(pokemon => {
+    if(imageDisplay.src == pokemon.sprites.front_default){
+      imageDisplay.src = pokemon.sprites.front_shiny
+    }else if(imageDisplay.src ==pokemon.sprites.front_shiny){
+      imageDisplay.src = pokemon.sprites.front_default
+    }
+})
+  })    
 
 evolveBtn.addEventListener("click", ()=>evolve(currentPokemonId));
 
+//evolution function. Checks the pokemonID, renders the evolution, and deletes the pokemon. 
 function evolve(id){
   if(id ==1 || id == 2 || id ==4 || id ==5 || id == 7 || id ==8 || id ==25){
     currentPokemonId = id + 1;
